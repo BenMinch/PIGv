@@ -54,6 +54,7 @@ ViraScreen is a time-saver to scan your raw read files before you move forward w
 A single csv file is output that will contain columns for the filename, the number of MCP hits in that query file and the chance of getting a genome from this dataset (a number from 0-1 representing a proportion). 
 
 # Using PIGv
+![alt text](https://github.com/BenMinch/PIGv/blob/main/images/chart.png)
 Once you have screened your reads and want to move forward with using PIGv, you'll find that it is quite easy. An example folder has some test inputs you can use to make sure the program is running correctly. It should give you 2 genomes. To run the examples you must first unzip the .fa files and run `cat korea.fa1 korea.fa2 > korea.fa` to combine the split fasta file (due to github filelimits).
 
 `python PIGv.py -i assembled_contigs.fa -o Output_directory -t 12 -cov metagenome.coverm -annot True`
