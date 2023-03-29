@@ -1,4 +1,5 @@
 # PIGv
+![alt text](https://github.com/BenMinch/PIGv/blob/main/images/PIGv.png)
 Pipeline for the identification of giant virus genomes from metagenomic datasets
 
 # Description
