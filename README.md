@@ -21,6 +21,15 @@ An easy to install and use pipeline to bin, clean, annotate, classify, and quant
 It's as easy as cloning this repository
 `git clone https://github.com/BenMinch/PIGv`
 
+### Downloading databases and setting up the program
+
+Download the hmm database `wget -O hmm.tar.gz https://zenodo.org/record/4762520/files/hmm.tar.gz?download=1` and then `tar -xvzf hmm.tar.gz` 
+
+Take all the files inside of this folder and copy them into the hmm folder provided inside the PIGv program from the github clone. 
+
+Unpack the diamond program inside the viral_screening folder `gunzip diamond-linux64.tar.gz|tar -xvzf`
+*Note: if you have a different computer model than linux64, you may need to install a different version of diamond and can do so [here](https://github.com/bbuchfink/diamond)*
+
 ## Preprocessing raw fastq
 
 The inputs for the PIGv program are (1) a file of assembled contigs from a metagenomic dataset, (2) a coverage file in metabat2 format. This is how I go about getting these files from raw reads.
