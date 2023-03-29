@@ -70,6 +70,7 @@ Once you have screened your reads and want to move forward with using PIGv, you'
 2. A folder of clean genomes containing your giant virus genomes
 3. A file called gvclass_out.tab: this is the output from [gvclass](https://github.com/NeLLi-team/gvclass/) and it contains taxonomy information as well as other relevant genome statistics
 4. A file called viral_genome_statistics.tsv: This contains information about different marker genes present in your genomes as well as the ViralRecall score. Read more about this [here](https://github.com/faylward/viralrecall)
+5. If you want MCP hits you can find them in the folder labled Contig_markersearch in a table called mcp.table.tsv. The corresponding proteins for MCPs are in the mcp.faa file.
 
 ## PIGv Batch
 
