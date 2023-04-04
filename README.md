@@ -9,6 +9,7 @@ An easy to install and use pipeline to bin, clean, annotate, classify, and quant
 
 1. Python packages
 - Pandas
+-natsort
 - Bio
 - numpy
 - matplotlib
@@ -16,6 +17,8 @@ An easy to install and use pipeline to bin, clean, annotate, classify, and quant
 3. [Prodigal-gv](https://github.com/apcamargo/prodigal-gv)
 4. Snakemake
 5. [Metabat2](https://bitbucket.org/berkeleylab/metabat)
+6. Megahit
+7. CoverM
 
 ## Installation
 
