@@ -17,6 +17,7 @@ An easy to install and use pipeline to bin, clean, annotate, classify, and quant
 3. [Prodigal-gv](https://github.com/apcamargo/prodigal-gv)
 4. Snakemake
 5. [Metabat2](https://bitbucket.org/berkeleylab/metabat)
+For use with trimmed fastq files
 6. Megahit
 7. CoverM
 
