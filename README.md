@@ -9,7 +9,7 @@ An easy to install and use pipeline to bin, clean, annotate, classify, and quant
 
 1. Python packages
 - Pandas
--natsort
+- natsort
 - Bio
 - numpy
 - matplotlib
@@ -17,13 +17,15 @@ An easy to install and use pipeline to bin, clean, annotate, classify, and quant
 3. [Prodigal-gv](https://github.com/apcamargo/prodigal-gv)
 4. Snakemake
 5. [Metabat2](https://bitbucket.org/berkeleylab/metabat)
-For use with trimmed fastq files
-6. Megahit
-7. CoverM
+6. [CheckV](https://bitbucket.org/berkeleylab/checkv/src/master/)
+For use with trimmed Fastq file input
+7. [Megahit](https://github.com/voutcn/megahit)
+8. [CoverM](https://github.com/wwood/CoverM)
+
 
 ## Installation
 
-It's as easy as cloning this repository
+It's as easy as cloning this repository and making sure you have all the dependencies installed
 `git clone https://github.com/BenMinch/PIGv`
 
 ### Downloading databases and setting up the program
@@ -35,13 +37,7 @@ Take all the files inside of this folder and copy them into the hmm folder provi
 Unpack the diamond program inside the viral_screening folder `gunzip diamond-linux64.tar.gz|tar -xvzf`
 *Note: if you have a different computer model than linux64, you may need to install a different version of diamond and can do so [here](https://github.com/bbuchfink/diamond)*
 
-## Preprocessing raw fastq
-
-The inputs for the PIGv program are (1) a file of assembled contigs from a metagenomic dataset, (2) a coverage file in metabat2 format. This is how I go about getting these files from raw reads.
-
-1. Trim the reads with trimgalore or another equivalent
-2. Assemble the reads using megahit or another assembly program.
-3. Map the trimmed reads back onto the assembly using CoverM contig with the method "metabat". You can read how to do this [Here](https://github.com/wwood/CoverM)
+Download the CheckV database and move it inside the resources folder `checkv download_database ./`
 
 ## ViraScreen
 
@@ -61,14 +57,28 @@ A single csv file is output that will contain columns for the filename, the numb
 ![alt text](https://github.com/BenMinch/PIGv/blob/main/images/chart.png)
 Once you have screened your reads and want to move forward with using PIGv, you'll find that it is quite easy. An example folder has some test inputs you can use to make sure the program is running correctly. It should give you 2 genomes. To run the examples you must first unzip the .fa files and run `cat korea.fa1 korea.fa2 > korea.fa` to combine the split fasta file (due to github filelimits).
 
-`python PIGv.py -i assembled_contigs.fa -o Output_directory -t 12 -cov metagenome.coverm -annot True`
+*Different starting points*
+1. Trimmed Reads: PIGv can do assembly and coverage mapping for you. All you need to input is trimmed forward and reverse reads (also works for single end reads as well). This mode will take significantly longer to run (about 2 hours more). 
+
+**Minimal usage**
+`python PIGv.py -1 read_1.fastq -2 read_2.fastq -o Output_directory -t 12 -type reads`
+
+2. Assembled Contigs and CoverM file: If you already have assembled contigs and a coverm coverage file, you should run this mode as it is faster.
+
+**Minimal usage**
+`python PIGv.py -i assembled_contigs.fa -o Output_directory -t 12 -cov metagenome.coverm -annot True -type contigs`
 
 **Inputs**
-1. -i: assembled contigs (required)
+1. -i: assembled contigs (required if running type contigs)
 2. -o: Output directory (can be whatever, it will create one if it doesn't exits) **Note: It cannot have "." or special characters. "_" is ok.
 3. -t: threads. I usually use around 12
-4. -cov: coverage file (required)
+4. -cov: coverage file (required if running type contigs)
 5. -annot: "True" if you want annotations for your genomes. This step does add around 30 minutes to completion time.
+6. -1: fastq read fwd (required for type reads)
+7. -2: fastq read rv (required for type reads)
+8. -type: contig or reads mode (required)
+9.-single: "True" if you have single end reads (you can input your read as the -1)
+10. -contig: "True" if you want to do contig-level analysis for NCLDV Markersearch
 
 **Outputs**
 1. A folder of annotations (.annotated.csv) if you selected it
@@ -76,6 +86,7 @@ Once you have screened your reads and want to move forward with using PIGv, you'
 3. A file called gvclass_out.tab: this is the output from [gvclass](https://github.com/NeLLi-team/gvclass/) and it contains taxonomy information as well as other relevant genome statistics
 4. A file called viral_genome_statistics.tsv: This contains information about different marker genes present in your genomes as well as the ViralRecall score. Read more about this [here](https://github.com/faylward/viralrecall)
 5. If you want MCP hits you can find them in the folder labled Contig_markersearch in a table called mcp.table.tsv. The corresponding proteins for MCPs are in the mcp.faa file.
+6. CheckV output file: file with information about completeness and quality of each genome.
 
 ## PIGv Batch
 
