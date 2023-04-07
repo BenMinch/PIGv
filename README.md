@@ -57,15 +57,15 @@ A single csv file is output that will contain columns for the filename, the numb
 ![alt text](https://github.com/BenMinch/PIGv/blob/main/images/chart.png)
 Once you have screened your reads and want to move forward with using PIGv, you'll find that it is quite easy. An example folder has some test inputs you can use to make sure the program is running correctly. It should give you 2 genomes. To run the examples you must first unzip the .fa files and run `cat korea.fa1 korea.fa2 > korea.fa` to combine the split fasta file (due to github filelimits).
 
-*Different starting points*
+**Different starting points**
 1. Trimmed Reads: PIGv can do assembly and coverage mapping for you. All you need to input is trimmed forward and reverse reads (also works for single end reads as well). This mode will take significantly longer to run (about 2 hours more). 
 
-**Minimal usage**
+*Minimal usage*
 `python PIGv.py -1 read_1.fastq -2 read_2.fastq -o Output_directory -t 12 -type reads`
 
 2. Assembled Contigs and CoverM file: If you already have assembled contigs and a coverm coverage file, you should run this mode as it is faster.
 
-**Minimal usage**
+*Minimal usage*
 `python PIGv.py -i assembled_contigs.fa -o Output_directory -t 12 -cov metagenome.coverm -annot True -type contigs`
 
 **Inputs**
