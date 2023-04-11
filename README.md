@@ -94,6 +94,8 @@ A script has been included to run PIGv on a plethora of files at the same time. 
 **NOTE:** this batch file requires that the name of your assemblies ends in ".contigs.fa" and that your coverage files end with ".contigs.coverm" with the basename being the same between the two files. This is how the program knows which ones to match.
 
 PIGv Batch also works in reads mode and you can input a directory of trimmed fastq reads as the input. Just make sure the only differences between fwrd and reverse is "_1" and "_2".
+## Known Issues
+1. Assembling large contigs: If you have over 50,000,000 reads and not a great computer, MEGAHIT will fail to assemble your contigs due to memory issues. It is recommended that you assemble contigs ahead of time on a supercomputer and then pass them to PIGv with the contigs mode.
 
 ## References and Resources
 
