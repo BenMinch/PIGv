@@ -37,7 +37,7 @@ Take all the files inside of this folder and copy them into the hmm folder provi
 Unpack the diamond program inside the viral_screening folder `gunzip diamond-linux64.tar.gz|tar -xvzf`
 *Note: if you have a different computer model than linux64, you may need to install a different version of diamond and can do so [here](https://github.com/bbuchfink/diamond)*
 
-Download the CheckV database and move it inside the resources folder `checkv download_database ./`
+Download the CheckV database and move it inside the resources folder `checkv download_database ./` . Make sure you do this in your conda environment after you have finished downloading dependencies.
 
 ## ViraScreen
 
