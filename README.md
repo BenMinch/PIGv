@@ -7,20 +7,20 @@ An easy to install and use pipeline to bin, clean, annotate, classify, and quant
 
 ## Dependencies
 It is recommended that you create a conda environment in which to install all of these packages to. 
-1. Python packages
-- Pandas
-- natsort
-- Bio
-- numpy
-- matplotlib
-2. [HMMER3](https://github.com/EddyRivasLab/hmmer)
-3. [Prodigal-gv](https://github.com/apcamargo/prodigal-gv)
-4. Snakemake
-5. [Metabat2](https://bitbucket.org/berkeleylab/metabat)
-6. [CheckV](https://bitbucket.org/berkeleylab/checkv/src/master/)
-7. [DIAMOND](https://github.com/bbuchfink/diamond/releases/tag/v2.0.4)
-7. [Megahit](https://github.com/voutcn/megahit)
-8. [CoverM](https://github.com/wwood/CoverM)
+1. Python packages (version 3.7.6)
+- Pandas (version 1.3.5)
+- natsort (version 8.3.1)
+- Bio (version 1.5.8)
+- numpy (version 1.21.5)
+- matplotlib (version 3.5.3)
+2. [HMMER3](https://github.com/EddyRivasLab/hmmer) version 3.3.2
+3. [Prodigal-gv](https://github.com/apcamargo/prodigal-gv) version 2.11.0
+4. Snakemake version 7.25
+5. [Metabat2](https://bitbucket.org/berkeleylab/metabat) version 2.15
+6. [CheckV](https://bitbucket.org/berkeleylab/checkv/src/master/) version 1.0.1
+7. [DIAMOND](https://github.com/bbuchfink/diamond/releases/tag/v2.0.4) version 2.0.4
+7. [Megahit](https://github.com/voutcn/megahit) version 1.2.9
+8. [CoverM](https://github.com/wwood/CoverM) version 0.4.0
 
 
 ## Installation
