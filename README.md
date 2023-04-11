@@ -18,6 +18,7 @@ An easy to install and use pipeline to bin, clean, annotate, classify, and quant
 4. Snakemake
 5. [Metabat2](https://bitbucket.org/berkeleylab/metabat)
 6. [CheckV](https://bitbucket.org/berkeleylab/checkv/src/master/)
+7. [DIAMOND](https://github.com/bbuchfink/diamond/releases/tag/v2.0.4)
 For use with trimmed Fastq file input
 7. [Megahit](https://github.com/voutcn/megahit)
 8. [CoverM](https://github.com/wwood/CoverM)
