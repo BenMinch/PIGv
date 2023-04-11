@@ -6,7 +6,7 @@ Pipeline for the identification of giant virus genomes from metagenomic datasets
 An easy to install and use pipeline to bin, clean, annotate, classify, and quantify genomes of giant viruses from metagenomic datasets. This program also includes the software **ViraScreen** which can save you a lot of time by screening your raw fastq reads for signs of giant viruses before you start the pipeline. 
 
 ## Dependencies
-
+It is recommended that you create a conda environment in which to install all of these packages to. 
 1. Python packages
 - Pandas
 - natsort
@@ -19,7 +19,6 @@ An easy to install and use pipeline to bin, clean, annotate, classify, and quant
 5. [Metabat2](https://bitbucket.org/berkeleylab/metabat)
 6. [CheckV](https://bitbucket.org/berkeleylab/checkv/src/master/)
 7. [DIAMOND](https://github.com/bbuchfink/diamond/releases/tag/v2.0.4)
-For use with trimmed Fastq file input
 7. [Megahit](https://github.com/voutcn/megahit)
 8. [CoverM](https://github.com/wwood/CoverM)
 
@@ -92,7 +91,9 @@ Once you have screened your reads and want to move forward with using PIGv, you'
 ## PIGv Batch
 
 A script has been included to run PIGv on a plethora of files at the same time. The process is assentially the same but instead of an input assembly and coverage file, you can input a folder of assemblies and a separate folder of coverage files. This will create a separate output folder for each sample.
-**NOTE:** this batch file requires that the name of your assemblies ends in ".contigs.fa" and that your coverage files end with ".contigs.coverm" with the basename being the same between the two files. This is how the program knows which ones to match. 
+**NOTE:** this batch file requires that the name of your assemblies ends in ".contigs.fa" and that your coverage files end with ".contigs.coverm" with the basename being the same between the two files. This is how the program knows which ones to match.
+
+PIGv Batch also works in reads mode and you can input a directory of trimmed fastq reads as the input. Just make sure the only differences between fwrd and reverse is "_1" and "_2".
 
 ## References and Resources
 
