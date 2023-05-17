@@ -91,9 +91,22 @@ Once you have screened your reads and want to move forward with using PIGv, you'
 ## PIGv Batch
 
 A script has been included to run PIGv on a plethora of files at the same time. The process is assentially the same but instead of an input assembly and coverage file, you can input a folder of assemblies and a separate folder of coverage files. This will create a separate output folder for each sample.
-**NOTE:** this batch file requires that the name of your assemblies ends in ".contigs.fa" and that your coverage files end with ".contigs.coverm" with the basename being the same between the two files. This is how the program knows which ones to match.
+
+PIGv batch Contigs is a super useful mode and is the **Recommended** running mode of PIGv due to its speed and low memory usage. It does require a bit more preprocessing but it is worth it. 
+1. Inputs
+* -i: Input folder of assemblies 
+* -reads: The folder with metagenomic fastq reads
+* -ref: Reference csv file that has a column called "File" for the name of your assembly and "Run" for the name of the corresponding SRR run.
+* -type: you will want to put contigs for the type
+* -n: Name of the run (can be whatever)
+2. Example: `python PIGv_batch.py -i assemblies -ref reference.csv -reads trimmed_reads -type contigs -n Test -t 4`
 
 PIGv Batch also works in reads mode and you can input a directory of trimmed fastq reads as the input. Just make sure the only differences between fwrd and reverse is "_1" and "_2".
+
+## Mirusvircota Search
+
+In light of the recent discovery of Mirusvircota viruses, PIGv can also search for signals of these viruses in your sample. If any bins get flagged as potential mirusviruses they will be in a separate folder in the results folder. Otherwise, the table searching for mirusvirus marker genes can be found in the "03_NCLDV_Markersearch" folder.
+
 ## Known Issues
 1. Assembling large contigs: If you have over 50,000,000 reads and not a great computer, MEGAHIT will fail to assemble your contigs due to memory issues. It is recommended that you assemble contigs ahead of time on a supercomputer and then pass them to PIGv with the contigs mode.
 
