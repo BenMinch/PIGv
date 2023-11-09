@@ -1,0 +1,19 @@
+name: PIGv
+channels:
+ - conda-forge
+ - bioconda
+dependencies:
+ - natsort==8.3.1
+ - Bio==1.79
+ - matplotlib==3.5.3
+ - numpy==1.21.5
+ - pandas==1.3.5
+ - python==3.7.6
+ - hmmer==3.3.2
+ - prodigal-gv==2.11.0
+ - metabat2==2.15
+ - checkv==1.0.1
+ - diamond==2.0.4
+ - coverm==0.4.0
+ - megahit==1.2.9
+ - snakemake==7.25
