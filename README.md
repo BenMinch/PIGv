@@ -19,7 +19,7 @@ It is recommended that you create a conda environment in which to install all of
 5. [Metabat2](https://bitbucket.org/berkeleylab/metabat) version 2.15
 6. [CheckV](https://bitbucket.org/berkeleylab/checkv/src/master/) version 1.0.1
 7. [DIAMOND](https://github.com/bbuchfink/diamond/releases/tag/v2.0.4) version 2.0.4
-7. [Megahit](https://github.com/voutcn/megahit) version 1.2.9
+7. [Megahit](https://github.com/voutcn/megahit) version 1.2.9 (only needed if you want to assemble in this program: not recommended)
 8. [CoverM](https://github.com/wwood/CoverM) version 0.4.0
 
 
