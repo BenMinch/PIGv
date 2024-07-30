@@ -5,6 +5,9 @@ Pipeline for the identification of giant virus genomes from metagenomic datasets
 # Description
 An easy to install and use pipeline to bin, clean, annotate, classify, and quantify genomes of giant viruses from metagenomic datasets. This program also includes the software **ViraScreen** which can save you a lot of time by screening your raw fastq reads for signs of giant viruses before you start the pipeline. 
 
+# Citation
+Minch, B. and Moniruzzaman, M., 2024. Expansion of the genomic and functional diversity of global ocean giant viruses. bioRxiv, pp.2024-07.
+
 ## Dependencies
 It is recommended that you create a conda environment in which to install all of these packages to. 
 1. Python packages (version 3.7.6)
