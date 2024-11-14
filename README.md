@@ -3,6 +3,7 @@
 Pipeline for the identification of giant virus genomes from metagenomic datasets
 
 # Description
+**GO check out [BEREN](https://gitlab.com/benminch1/BEREN). It has PIGv integrated inside of it and is much easier to install and run. It also has more functionality**
 An easy to install and use pipeline to bin, clean, annotate, classify, and quantify genomes of giant viruses from metagenomic datasets. This program also includes the software **ViraScreen** which can save you a lot of time by screening your raw fastq reads for signs of giant viruses before you start the pipeline. 
 
 # Citation
